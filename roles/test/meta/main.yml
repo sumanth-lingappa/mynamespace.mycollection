@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  standalone: false
+  description: >
+    Does nothing.
+
+dependencies: []

@@ -1,0 +1,57 @@
+---
+argument_specs:
+  main:
+    short_description: Test role that does nothing
+    version_added: 0.1.0
+    description:
+      - A simple test role with a sophisticated argument spec that does nothing.
+      - It mainly demonstrates role argument specs. The arguments are taken from another collection (guess which one!) and do not have any effect on this role.
+    author:
+      - Felix Fontein (@felixfontein)
+    options:
+      sops_version:
+        default: latest
+        description:
+          - The version of sops to install.
+          - Should be a version like C(3.7.2). The special value C(latest) will select the latest version available form the given source.
+        type: str
+      sops_source:
+        default: auto
+        description:
+          - Determines the source from where sops is installed.
+          - The value C(github) will install sops from the Mozilla sops releases on GitHub (U(https://github.com/mozilla/sops/releases/)).
+          - The value C(system) will install sops from the system packages. Note that not all system package repositories support sops.
+          - The value C(auto) will determine the best source to install sops from. Here, system package repositories are preferred over GitHub.
+        type: str
+        choices:
+          - auto
+          - github
+          - system
+      sops_install_on_localhost:
+        default: false
+        description:
+          - Installs sops on the Ansible controller (C(localhost)) instead of the remote host.
+        type: bool
+      sops_become_on_install:
+        default: true
+        description:
+          - 'Whether the role should use C(become: true) when installing packages.'
+        type: bool
+      sops_github_latest_detection:
+        description:
+          - When installing the latest sops version from GitHub, configures how the latest release is detected.
+          - C(auto) tries C(api) first and then uses C(latest-release).
+          - C(api) asks the GitHub API for a list of recent releases and picks the highest version.
+          - C(latest-release) uses a not fully documented URL to retrieve the release marked as "latest" by the repository maintainers.
+        type: str
+        choices:
+          - auto
+          - api
+          - latest-release
+        version_added: 0.2.0
+      sops_github_token:
+        description:
+          - Token to provide when querying the GitHub API for the latest release. Without the token
+            there are rather strict rate limits.
+          - Should mainly be used in GitHub Actions.
+        type: str

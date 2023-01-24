@@ -1,0 +1,3 @@
+---
+- ansible.builtin.debug:
+    msg: This role does nothing. Sorry.

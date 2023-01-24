@@ -1,0 +1,21 @@
+---
+# See https://docs.ansible.com/ansible/latest/dev_guide/collections_galaxy_meta.html
+
+namespace: mynamespace
+name: mycollection
+version: 0.1.0
+readme: README.md
+authors:
+  - Felix Fontein (github.com/felixfontein)
+  - Brian Scholer (github.com/briantist)
+description: A test collection for docs tooling.
+license_file: LICENSE
+tags:
+  - docs
+  - tooling
+repository: https://github.com/felixfontein/mynamespace.mycollection
+homepage: https://github.com/felixfontein/mynamespace.mycollection
+issues: https://github.com/felixfontein/mynamespace.mycollection/issues
+build_ignore:
+  - .gitignore
+  - changelogs/.plugin-cache.yaml
