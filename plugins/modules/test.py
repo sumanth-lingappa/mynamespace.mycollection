@@ -18,6 +18,7 @@ author:
   - Felix Fontein (@felixfontein)
 description:
   - This module does nothing. Really!
+  - More nothing!
 attributes:
   check_mode:
     description: Can run in C(check_mode) and return changed status prediction without modifying target.
