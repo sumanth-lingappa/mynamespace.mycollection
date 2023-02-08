@@ -18,6 +18,8 @@ author:
   - Felix Fontein (@felixfontein)
 description:
   - This module does nothing. Really!
+  - I want to extend this description because right now it's way too short.
+    It does not contain anything really helpful to the user.
 attributes:
   check_mode:
     description: Can run in C(check_mode) and return changed status prediction without modifying target.
@@ -41,7 +43,9 @@ options:
     required: true
     suboptions:
       url:
-        description: The URL.
+        description:
+          - The URL.
+          - It should be a plain URL that can be accessed via HTTP or HTTPS.
         type: str
         required: true
       method:
