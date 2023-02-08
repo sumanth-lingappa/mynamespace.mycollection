@@ -35,7 +35,7 @@ jobs:
 
   publish-docs-gh-pages:
     # for now we won't run this on forks
-    if: github.repository == 'ansible-collections/mynamespace.mycollection'
+    if: github.repository == 'felixfontein/mynamespace.mycollection'
     permissions:
       contents: write
     needs: [build-docs]
